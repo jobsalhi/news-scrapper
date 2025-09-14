@@ -1,13 +1,19 @@
 {
-  "name": "gemini-news",
-  "main": "src/index.js",
-  "compatibility_date": "2025-09-14",
-  "observability": {
-    "enabled": true
-  },
-  "triggers": {
-    "crons": [
-      "* * * * *"
-    ]
-  }
+	"name": "gemini-news",
+	"main": "src/index.js",
+	"compatibility_date": "2025-09-14",
+	"observability": {
+		"enabled": true
+	},
+	"triggers": {
+		"crons": [
+			"0 5 * * *"
+		]
+	},
+	"kv_namespaces": [
+		{
+			"binding": "NEWS_CACHE",
+			"id": "c369a3888d234f338c3167d1cfdb3b9f"
+		}
+	]
 }
