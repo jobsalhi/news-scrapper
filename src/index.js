@@ -143,7 +143,7 @@ export default {
 			const webhook = getEnv(env, 'DISCORD_WEBHOOK_URL', { required: true });
 
 			console.log(`[info] Fetching RSS: ${rssUrl}`);
-			const articles = await fetchRssItems(rssUrl, 10);
+			const articles = await fetchRssItems(rssUrl, env.LIMIT);
 			if (!articles.length) return console.log('[warn] No RSS items found.');
 
 			// Changed: use a rolling list of previously posted links in KV for dedup
@@ -189,7 +189,7 @@ export default {
 			console.error('[error]', err.message);
 		}
 	},
-};
+};  
 
 // Helper: safe JSON.parse returning null on failure
 function safeJsonParse(s) {
