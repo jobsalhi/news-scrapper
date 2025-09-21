@@ -2,6 +2,7 @@
 	"name": "gemini-news",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --test-scheduled",
@@ -9,5 +10,10 @@
 	},
 	"devDependencies": {
 		"wrangler": "^3.101.0"
+	},
+	"dependencies": {
+		"node-fetch": "^3.3.2",
+		"xml2js": "^0.6.2",
+		"cheerio": "^1.0.0-rc.12"
 	}
 }

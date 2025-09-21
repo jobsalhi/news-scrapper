@@ -2,18 +2,24 @@
 	"name": "gemini-news",
 	"main": "src/index.js",
 	"compatibility_date": "2025-09-14",
+	"vars": {
+		"RSS_URL": "https://feeds.leparisien.fr/leparisien/rss/etudiant/vie-etudiante",
+		"LIMIT": "10"
+	},
 	"observability": {
 		"enabled": true
 	},
 	"triggers": {
 		"crons": [
-			"0 5 * * *"
+			"*/1 * * * *"
 		]
 	},
 	"kv_namespaces": [
 		{
-			"binding": "NEWS_CACHE",
-			"id": "c369a3888d234f338c3167d1cfdb3b9f"
+			"binding": "STATE_NEWS",
+			"id": "e1307045d2554125b0d3d4a1d2aed313"
 		}
-	]
+	],
+	"compatibility_flags": ["nodejs_compat"]
+	
 }
